@@ -1,0 +1,26 @@
+.login {
+  height: 100%;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.login form input {
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #a2a8ca;
+  font-weight: 600;
+  padding-bottom: 5px;
+  background-color: transparent;
+}
+
+.login form input:focus {
+  border-bottom: 1px solid #58a6f0;
+  padding-bottom: 7px;
+}

@@ -6,11 +6,11 @@ export const store = configureStore({
   },
 });
 
-const state = {
-  auth: {
-    username: "",
-    password: "",
-    error: "",
-  },
-  todos: [],
-};
+// const state = {
+//   auth: {
+//     username: "",
+//     password: "",
+//     error: "",
+//   },
+//   todos: [],
+// };

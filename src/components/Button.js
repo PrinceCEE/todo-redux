@@ -1,7 +1,18 @@
-const Button = ({ text, type, onClick }) => {
-  return (
+import { MdAdd, MdOutlineExpandLess } from "react-icons/md";
+
+const Button = ({ text, type, onClick, fab, icon }) => {
+  return fab ? (
+    <button type={type} onClick={onClick} className="fab">
+      <MdAdd />
+    </button>
+  ) : (
     <button type={type} onClick={onClick}>
-      {text}
+      <span>{text}</span>
+      {icon && (
+        <span>
+          <MdOutlineExpandLess />
+        </span>
+      )}
     </button>
   );
 };

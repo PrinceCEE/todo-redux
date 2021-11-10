@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import Button from "../../components/Button";
+import NavBar from "../../components/Navbar";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -11,13 +12,16 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <form>
-        <input placeholder="Enter your username" />
-        <input placeholder="Enter your password" />
-        <Button text="Login" type="submit" onClick={handleClick} />
-      </form>
-    </div>
+    <>
+      <NavBar />
+      <div className="login">
+        <form>
+          <input placeholder="Enter your username" />
+          <input placeholder="Enter your password" />
+          <Button text="Login" type="submit" onClick={handleClick} />
+        </form>
+      </div>
+    </>
   );
 };
 

@@ -3,15 +3,20 @@
   padding: 0 20px;
   padding-bottom: 20px;
 }
+span,
+h2 {
+  color: #1f2950;
+}
 
 button {
   background-color: #58a6f0;
-  min-width: 100px;
-  padding: 10px 20px;
-  border-radius: 50px;
   border: 2px solid #58a6f0;
   color: white;
   font-weight: 600;
+}
+
+button span {
+  color: white;
 }
 
 button:hover {
@@ -26,8 +31,14 @@ button:hover {
   margin-top: 15px;
 }
 
+.navbar span:first-of-type {
+  font-size: large;
+  font-weight: 600;
+}
+
 .navbar .icon {
   transform: rotate(-90deg);
+  cursor: pointer;
 }
 
 .navbar .icon svg {

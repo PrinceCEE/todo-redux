@@ -45,8 +45,12 @@
   display: flex;
   justify-content: right;
   padding: 0 15px;
+  /* background-color: red; */
 }
 
 .new-todo div:last-of-type button {
-  min-width: 7000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: baseline;
 }

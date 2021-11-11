@@ -9,7 +9,7 @@ const Button = ({ text, type, onClick, fab, icon }) => {
     <button type={type} onClick={onClick}>
       <span>{text}</span>
       {icon && (
-        <span>
+        <span className="icon">
           <MdOutlineExpandLess />
         </span>
       )}

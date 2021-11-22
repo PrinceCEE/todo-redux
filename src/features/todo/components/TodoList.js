@@ -1,8 +1,8 @@
 const TodoList = ({ todo }) => {
   return (
     <li>
-      <span></span>
-      <span>{todo}</span>
+      <span className={todo.type.toLowerCase()}></span>
+      <span>{todo.title}</span>
     </li>
   );
 };

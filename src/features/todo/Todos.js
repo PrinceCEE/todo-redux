@@ -1,36 +1,44 @@
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./Todos.css";
 import Button from "../../components/Button";
 import TodoList from "./components/TodoList";
 import NavBar from "../../components/Navbar";
 
 const Todos = () => {
+  const username = useSelector((state) => state.auth.credentials?.username);
+  const todos = useSelector((state) => state.todos);
   const navigate = useNavigate();
-  const todos = [
-    "Daily meeting with team",
-    "Pay for rent",
-    "Check emails",
-    "Lunch with Emma",
-    "Meditation",
-  ];
 
+  const personalTasks = todos.filter((task) => task.type === "Personal");
+  const workTasks = todos.filter((task) => task.type === "Work");
   return (
     <>
       <NavBar />
       <div className="todos">
-        <h2>What's up, Joy!</h2>
+        <h2>What's up, {username} !</h2>
         <div className="categories">
           <p>categories</p>
           <div>
             <div className="category work">
-              <p>40 tasks</p>
+              <p>{workTasks.length} tasks</p>
               <p>Work</p>
-              <progress value="70" max="100" />
+              <progress
+                value={
+                  workTasks.filter(({ isCompleted }) => isCompleted).length
+                }
+                max={workTasks.length}
+              />
             </div>
             <div className="category personal">
-              <p>40 tasks</p>
+              <p>{personalTasks.length} tasks</p>
               <p>Personal</p>
-              <progress value="70" max="100" />
+              <progress
+                value={
+                  personalTasks.filter(({ isCompleted }) => isCompleted).length
+                }
+                max={personalTasks.length}
+              />
             </div>
           </div>
         </div>

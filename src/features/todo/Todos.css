@@ -80,6 +80,7 @@ progress {
 }
 
 .todos .tasks ul li {
+  cursor: pointer;
   list-style-type: none;
   padding: 15px;
   color: #404561;
@@ -104,6 +105,14 @@ progress {
   border-radius: 50%;
   background-color: white;
   border: 2px solid #d70def;
+}
+
+.todos .tasks ul li span.work {
+  border: 2px solid #d70def;
+}
+
+.todos .tasks ul li span.personal {
+  border: 2px solid #166ff9;
 }
 
 .todos button.fab {

@@ -7,12 +7,12 @@ const createTodoSlice = createSlice({
   reducers: {
     addNewTodo: (state, action) => {
       state.push(action.payload);
-      localStorage.setItem(TODOS, JSON.stringify(state.todos));
+      localStorage.setItem(TODOS, JSON.stringify(state));
     },
     toggleTodo: (state, action) => {
       const { index } = action.payload;
       state[index].isCompleted = !state[index].isCompleted;
-      localStorage.setItem(TODOS, JSON.parse(state));
+      localStorage.setItem(TODOS, JSON.stringify(state));
     },
   },
 });

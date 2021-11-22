@@ -1,8 +1,12 @@
-const TodoList = ({ todo }) => {
+const TodoList = ({ todo, onClick }) => {
   return (
-    <li>
+    <li onClick={onClick}>
       <span className={todo.type.toLowerCase()}></span>
-      <span>{todo.title}</span>
+      <span
+        style={{ textDecoration: todo.isCompleted ? "line-through" : "none" }}
+      >
+        {todo.title}
+      </span>
     </li>
   );
 };

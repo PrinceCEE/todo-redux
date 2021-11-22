@@ -1,14 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./Todos.css";
 import Button from "../../components/Button";
 import TodoList from "./components/TodoList";
 import NavBar from "../../components/Navbar";
+import { toggleTodo } from "./createTodoSlice";
 
 const Todos = () => {
   const username = useSelector((state) => state.auth.credentials?.username);
   const todos = useSelector((state) => state.todos);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const personalTasks = todos.filter((task) => task.type === "Personal");
   const workTasks = todos.filter((task) => task.type === "Work");
@@ -46,7 +48,13 @@ const Todos = () => {
           <p>Today's tasks</p>
           <ul>
             {todos.map((todo, index) => (
-              <TodoList todo={todo} key={index} />
+              <TodoList
+                todo={todo}
+                key={index}
+                onClick={() => {
+                  dispatch(toggleTodo({ index }));
+                }}
+              />
             ))}
           </ul>
         </div>

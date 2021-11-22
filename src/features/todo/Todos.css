@@ -27,6 +27,7 @@
   background-color: white;
   padding: 10px;
   border-radius: 15px;
+  width: 45%;
 }
 
 progress {
@@ -111,6 +112,7 @@ progress {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  box-shadow: 0 0 3px 5px #58a6f0;
 }
 
 .todos button.fab svg {

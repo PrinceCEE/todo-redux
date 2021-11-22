@@ -44,3 +44,17 @@ button:hover {
 .navbar .icon svg {
   margin-bottom: -2.5px;
 }
+
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+  #App {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  #App {
+    width: 60%;
+    margin: 0 auto;
+  }
+}

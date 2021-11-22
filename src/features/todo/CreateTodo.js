@@ -22,11 +22,14 @@ const CreateTodo = () => {
   const isEdit = index >= 0 ? true : false;
   const todos = useSelector((state) => state.todos);
 
-  useEffect(() => {
+  const handleSetup = () => {
     if (isEdit) {
       setTitle(todos[index].title);
       setType(todos[index].type);
     }
+  };
+  useEffect(() => {
+    handleSetup();
   }, []);
 
   return (

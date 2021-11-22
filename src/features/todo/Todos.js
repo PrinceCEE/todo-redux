@@ -4,7 +4,7 @@ import "./Todos.css";
 import Button from "../../components/Button";
 import TodoList from "./components/TodoList";
 import NavBar from "../../components/Navbar";
-import { toggleTodo } from "./todoSlice";
+import { toggleTodo, deleteTodo } from "./todoSlice";
 
 const Todos = () => {
   const username = useSelector((state) => state.auth.credentials?.username);
@@ -53,6 +53,12 @@ const Todos = () => {
                 key={index}
                 onClick={() => {
                   dispatch(toggleTodo({ index }));
+                }}
+                handleDelete={() => {
+                  dispatch(deleteTodo({ index }));
+                }}
+                handleEdit={() => {
+                  navigate(`/create-todo?index=${index}`);
                 }}
               />
             ))}

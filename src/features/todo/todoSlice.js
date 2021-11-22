@@ -20,12 +20,11 @@ const createTodoSlice = createSlice({
       localStorage.setItem(TODOS, JSON.stringify(state));
     },
     editTodo: (state, action) => {
-      const { title, type, index, isCompleted } = action.payload;
+      const { title, type, index } = action.payload;
       const task = state[index];
       task.title = title;
       task.type = type;
-      task.isCompleted = isCompleted;
-      localStorage.setItem(TODOS, state);
+      localStorage.setItem(TODOS, JSON.stringify(state));
     },
   },
 });

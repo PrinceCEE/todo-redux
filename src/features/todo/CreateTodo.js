@@ -1,16 +1,28 @@
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import "./CreateTodo.css";
 import CloseBtn from "./components/CloseBtn";
 import Button from "../../components/Button";
-import { useState } from "react";
-import { addNewTodo } from "./todoSlice";
+import { useEffect, useState } from "react";
+import { addNewTodo, editTodo } from "./todoSlice";
 
 const CreateTodo = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [search] = useSearchParams();
   const [title, setTitle] = useState("");
   const [type, setType] = useState("Work");
+
+  const index = Number(search.get("index"));
+  const isEdit = index >= 0 ? true : false;
+  const todos = useSelector((state) => state.todos);
+
+  useEffect(() => {
+    if (isEdit) {
+      setTitle(todos[index].title);
+      setType(todos[index].type);
+    }
+  }, []);
 
   return (
     <div className="new-todo">
@@ -35,6 +47,14 @@ const CreateTodo = () => {
           type="button"
           icon
           onClick={() => {
+            if (isEdit) {
+              const { title: editTitle, type: editType } = todos[index];
+              if (title !== editTitle || type !== editType) {
+                dispatch(editTodo({ title, type, index }));
+                navigate("/todos");
+              }
+              return;
+            }
             dispatch(addNewTodo({ type, title, isCompleted: false }));
             navigate("/todos");
           }}

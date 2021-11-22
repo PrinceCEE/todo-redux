@@ -1,9 +1,9 @@
 import { MdDeleteOutline, MdOutlineModeEditOutline } from "react-icons/md";
 
-const TodoList = ({ todo, onClick }) => {
+const TodoList = ({ todo, onClick, handleDelete, handleEdit }) => {
   return (
-    <li onClick={onClick}>
-      <div className="title">
+    <li>
+      <div className="title" onClick={onClick}>
         <span className={todo.type.toLowerCase()}></span>
         <span
           style={{ textDecoration: todo.isCompleted ? "line-through" : "none" }}
@@ -12,10 +12,10 @@ const TodoList = ({ todo, onClick }) => {
         </span>
       </div>
       <div className="icons">
-        <span>
+        <span onClick={handleEdit}>
           <MdOutlineModeEditOutline />
         </span>
-        <span>
+        <span onClick={handleDelete}>
           <MdDeleteOutline />
         </span>
       </div>

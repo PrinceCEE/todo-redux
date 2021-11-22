@@ -30,7 +30,7 @@ const CreateTodo = () => {
   };
   useEffect(() => {
     handleSetup();
-  }, []);
+  }, [handleSetup]);
 
   return (
     <div className="new-todo">

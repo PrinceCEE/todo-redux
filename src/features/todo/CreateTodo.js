@@ -13,7 +13,12 @@ const CreateTodo = () => {
   const [title, setTitle] = useState("");
   const [type, setType] = useState("Work");
 
-  const index = Number(search.get("index"));
+  let i = search.get("index");
+  let index;
+  if (i) {
+    index = Number(i);
+  }
+
   const isEdit = index >= 0 ? true : false;
   const todos = useSelector((state) => state.todos);
 

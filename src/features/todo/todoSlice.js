@@ -14,9 +14,23 @@ const createTodoSlice = createSlice({
       state[index].isCompleted = !state[index].isCompleted;
       localStorage.setItem(TODOS, JSON.stringify(state));
     },
+    deleteTodo: (state, action) => {
+      const { index } = action.payload;
+      state.splice(index, 1);
+      localStorage.setItem(TODOS, JSON.stringify(state));
+    },
+    editTodo: (state, action) => {
+      const { title, type, index, isCompleted } = action.payload;
+      const task = state[index];
+      task.title = title;
+      task.type = type;
+      task.isCompleted = isCompleted;
+      localStorage.setItem(TODOS, state);
+    },
   },
 });
 
-export const { addNewTodo, toggleTodo } = createTodoSlice.actions;
+export const { addNewTodo, toggleTodo, editTodo, deleteTodo } =
+  createTodoSlice.actions;
 
 export default createTodoSlice.reducer;

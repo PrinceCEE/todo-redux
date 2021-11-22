@@ -4,7 +4,7 @@ import "./CreateTodo.css";
 import CloseBtn from "./components/CloseBtn";
 import Button from "../../components/Button";
 import { useState } from "react";
-import { addNewTodo } from "./createTodoSlice";
+import { addNewTodo } from "./todoSlice";
 
 const CreateTodo = () => {
   const navigate = useNavigate();

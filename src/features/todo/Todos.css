@@ -80,14 +80,21 @@ progress {
   margin-bottom: 15px;
   border-radius: 10px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.todos .tasks ul li span {
+.todos .tasks ul li div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todos .tasks ul li div span {
   display: inline-block;
 }
 
-.todos .tasks ul li span:first-of-type {
+.todos .tasks ul li div.title span:first-of-type {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,6 +104,15 @@ progress {
   border-radius: 50%;
   background-color: white;
   border: 2px solid #d70def;
+}
+
+.todos .tasks ul li div.icons span:first-of-type {
+  margin-right: 20px;
+  color: #166ff9;
+}
+
+.todos .tasks ul li div.icons span:last-of-type {
+  color: #d70def;
 }
 
 .todos .tasks ul li span.work {

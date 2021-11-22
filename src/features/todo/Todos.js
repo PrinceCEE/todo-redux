@@ -4,7 +4,7 @@ import "./Todos.css";
 import Button from "../../components/Button";
 import TodoList from "./components/TodoList";
 import NavBar from "../../components/Navbar";
-import { toggleTodo } from "./createTodoSlice";
+import { toggleTodo } from "./todoSlice";
 
 const Todos = () => {
   const username = useSelector((state) => state.auth.credentials?.username);

@@ -28,7 +28,8 @@
 }
 
 .new-todo .input-task {
-  margin: 40px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .new-todo .input-task input {
@@ -36,21 +37,55 @@
   margin-bottom: 20px;
   font-size: x-large;
   border: none;
+  border-bottom: 1px solid #a2a8ca;;
   font-weight: 600;
   padding-bottom: 5px;
   background-color: transparent;
+}
+
+.new-todo .input-task input:focus {
+  outline: none;
+}
+
+.new-todo .input-task p {
+  margin-top: 10px;
+  color: #b8bed4;
+}
+
+.new-todo .input-task select {
+  max-width: 300px;
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px solid #a2a8ca;
+  border-radius: 5px;
 }
 
 .new-todo div:last-of-type {
   display: flex;
   justify-content: right;
   padding: 0 15px;
-  /* background-color: red; */
 }
 
 .new-todo div:last-of-type button {
   display: flex;
   justify-content: center;
   align-items: center;
-  vertical-align: baseline;
+  width: 200px;
+  padding: 10px;
+  border-radius: 40px;
+}
+
+.new-todo div:last-of-type button span:first-of-type {
+  margin-right: 5px;
+}
+
+.new-todo div:last-of-type button span:last-of-type {
+  font-size: 24px;
+  margin-bottom: -5px;
+}
+
+@media only screen and (min-width: 601px) {
+  .new-todo div:last-of-type {
+    justify-content: center;
+  }
 }

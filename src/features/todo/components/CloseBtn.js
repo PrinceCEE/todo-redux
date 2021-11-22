@@ -1,8 +1,8 @@
 import { MdOutlineClose } from "react-icons/md";
 
-const CloseBtn = () => {
+const CloseBtn = ({ onClick }) => {
   return (
-    <span className="close-btn">
+    <span className="close-btn" onClick={onClick}>
       <MdOutlineClose />
     </span>
   );

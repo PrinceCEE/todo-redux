@@ -1,5 +1,6 @@
 .todos {
   position: relative;
+  height: 100%;
 }
 
 .todos h2 {
